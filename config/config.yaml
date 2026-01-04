@@ -1,0 +1,22 @@
+## Application Configuration ##
+
+project:
+  name: customer-churn-prediction
+  version: 1.0.0
+  author: Pranish
+
+paths:
+  raw_data: data/raw/telco_churn.csv
+  processed_data: data/processed/churn_cleaned.csv
+  model_dir: model/
+  model_file: model/churn_model.pkl
+  feature_file: model/features.pkl
+  image_dir: image/
+
+app:
+  host: 127.0.0.1
+  port: 5000
+  debug: true
+
+logging:
+  level: INFO
