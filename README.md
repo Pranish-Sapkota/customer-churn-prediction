@@ -101,9 +101,9 @@ To predict customer churn (`Yes / No`) and identify key drivers contributing to 
 
 
 ## Dataset
--Name: Telco Customer Churn (IBM Sample Dataset)
+Name: Telco Customer Churn (IBM Sample Dataset)
 
--Source: Kaggle
+Source: Kaggle
  https://www.kaggle.com/datasets/blastchar/telco-customer-churn
 
  ## Model Training
@@ -115,15 +115,15 @@ To predict customer churn (`Yes / No`) and identify key drivers contributing to 
 
 **Artifacts Saved**:
 
-    -Trained model (churn_model.pkl)
+    Trained model (churn_model.pkl)
 
-    -Feature names (features.pkl) to ensure consistent inference
+    Feature names (features.pkl) to ensure consistent inference
 
 **Model Performance**
 
-    -Achieved approximately 80% accuracy
+    Achieved approximately 80% accuracy
 
-    -Demonstrated strong performance in identifying high-risk churn customers
+    Demonstrated strong performance in identifying high-risk churn customers
 
 
 ## Web Application (Flask)
@@ -132,108 +132,47 @@ A Flask-based web application was developed to deploy the trained model.
 
 **Features**
 
-    -Accepts customer input via a web form
+    Accepts customer input via a web form
 
-    -Performs real-time churn prediction
+    Performs real-time churn prediction
 
-    -Displays prediction results instantly
+    Displays prediction results instantly
 
 ## How to Run the Project
 **1. Clone the Repository**
 
-    -git clone https://github.com/Pranish-Sapkota/customer-churn-prediction
+    git clone https://github.com/Pranish-Sapkota/customer-churn-prediction
 
-    -cd customer-churn-prediction
+    cd customer-churn-prediction
 
 
 **2. Create a Virtual Environment**
 
-    -python -m venv venv
+    python -m venv venv
 
-    -source venv/bin/activate 
+    source venv/bin/activate 
 
 
 **3. Install Dependencies**
 
-    -pip install -r requirements.txt
+    pip install -r requirements.txt
 
 
 **4. Train the Model**
 
-    -python src/01_data_preprocessing.py
+    python src/01_data_preprocessing.py
 
-    -python src/02_train_model.py
+    python src/02_train_model.py
 
-    -python src/03_evaluate_model.py
+    python src/03_evaluate_model.py
 
 
 
 **5. Run the Flask App**
 
-    -python app/app.py
+    python app/app.py
 
 
 
 
-## Dataset
--Name: Telco Customer Churn (IBM Sample Dataset)
-
--Source: Kaggle
- https://www.kaggle.com/datasets/blastchar/telco-customer-churn
-
- ## Model Training
-**Algorithm**: Random Forest Classifier
-
-**Class Imbalance Handling**: class_weight="balanced"
-
-**Train-Test Split**: Stratified split to preserve churn distribution
-
-**Artifacts Saved**:
-
-    -Trained model (churn_model.pkl)
-
-    -Feature names (features.pkl) to ensure consistent inference
-
-**Model Performance**
-
-    -Achieved approximately 80% accuracy
-
-    -Demonstrated strong performance in identifying high-risk churn customers
-
-
-## Web Application (Flask)
-
-A Flask-based web application was developed to deploy the trained model.
-
-**Features**
-
-    -Accepts customer input via a web form
-
-    -Performs real-time churn prediction
-
-    -Displays prediction results instantly
-
-## How to Run the Project
-**1. Clone the Repository**
-    -git clone https://github.com/Pranish-Sapkota/customer-churn-prediction
-    -cd customer-churn-prediction
-
-
-**2. Create a Virtual Environment**
-    -python -m venv venv
-    -source venv/bin/activate 
-
-
-**3. Install Dependencies**
-    -pip install -r requirements.txt
-
-
-**4. Train the Model**
-    -python src/01_data_preprocessing.py
-    -python src/02_train_model.py
-    -python src/03_evaluate_model.py
-
-
-**5. Run the Flask App**
-    -python app/app.py
 
