@@ -28,50 +28,35 @@ To predict customer churn (`Yes / No`) and identify key drivers contributing to 
 
 ## Project Structure
 
-customer-churn-prediction
-│
-├── params.yaml
-├── README.md
-├── requirements.txt
-│
-├── app
-│   ├── app.py
-│   └── templates
-│       └── index.html
-│
-├── config
-│   └── config.yaml
-│
-├── data
-│   ├── raw
-│   │   └── telco_churn.csv
-│   └── processed
-│       ├── churn_cleaned.csv
-│       └── churn_final_eda.csv
-│
-├── image
-│   ├── churn_distribution.png
-│   ├── correlation_heatmap.png
-│   ├── feature_correlation_with_churn.png
-│   ├── MonthlyCharges_distribution.png
-│   ├── monthlycharges_vs_churn.png
-│   ├── pairplot.png
-│   ├── tenure_distribution.png
-│   ├── tenure_vs_churn.png
-│   ├── TotalCharges_distribution.png
-│   └── totalcharges_vs_churn.png
-│
-├── model
-│   ├── churn_model.pkl
-│   └── features.pkl
-│
-├── notebooks
-│   └── 01_eda.ipynb
-│
-└── src
-    ├── 01_data_preprocessing.py
-    ├── 02_train_model.py
-    └── 03_evaluate_model.py
+customer-churn-prediction/
+|-- params.yaml
+|-- README.md
+|-- requirements.txt
+|-- app/
+|   |-- app.py
+|   `-- templates/
+|       `-- index.html
+|-- config/
+|   `-- config.yaml
+|-- data/
+|   |-- raw/
+|   |   `-- telco_churn.csv
+|   `-- processed/
+|       |-- churn_cleaned.csv
+|       `-- churn_final_eda.csv
+|-- image/
+|   |-- churn_distribution.png
+|   |-- correlation_heatmap.png
+|   ...
+|-- model/
+|   |-- churn_model.pkl
+|   `-- features.pkl
+|-- notebooks/
+|   `-- 01_eda.ipynb
+`-- src/
+    |-- 01_data_preprocessing.py
+    |-- 02_train_model.py
+    `-- 03_evaluate_model.py
 
 ##  Project Overview
 Customer churn is a critical business problem in the telecom industry. Acquiring new customers is significantly more expensive than retaining existing ones.  
