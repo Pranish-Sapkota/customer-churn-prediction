@@ -28,28 +28,28 @@ To predict customer churn (`Yes / No`) and identify key drivers contributing to 
 
 ## Project Structure
 
-customer-churn-prediction/
+customer-churn-prediction
 │
 ├── params.yaml
 ├── README.md
 ├── requirements.txt
 │
-├── app/
+├── app
 │   ├── app.py
-│   └── templates/
+│   └── templates
 │       └── index.html
 │
-├── config/
+├── config
 │   └── config.yaml
 │
-├── data/
-│   ├── raw/
+├── data
+│   ├── raw
 │   │   └── telco_churn.csv
-│   └── processed/
+│   └── processed
 │       ├── churn_cleaned.csv
 │       └── churn_final_eda.csv
 │
-├── image/
+├── image
 │   ├── churn_distribution.png
 │   ├── correlation_heatmap.png
 │   ├── feature_correlation_with_churn.png
@@ -61,17 +61,17 @@ customer-churn-prediction/
 │   ├── TotalCharges_distribution.png
 │   └── totalcharges_vs_churn.png
 │
-├── model/
+├── model
 │   ├── churn_model.pkl
 │   └── features.pkl
 │
-├── notebooks/
+├── notebooks
 │   └── 01_eda.ipynb
 │
-└── src/
+└── src
     ├── 01_data_preprocessing.py
     ├── 02_train_model.py
-    └── 03_evaluate_model.py# Customer Churn Prediction System
+    └── 03_evaluate_model.py
 
 ##  Project Overview
 Customer churn is a critical business problem in the telecom industry. Acquiring new customers is significantly more expensive than retaining existing ones.  
