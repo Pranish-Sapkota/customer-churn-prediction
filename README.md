@@ -27,7 +27,7 @@ To predict customer churn (`Yes / No`) and identify key drivers contributing to 
 - **Model Serialization:** Joblib
 
 ## Project Structure
-
+<pre markdown="1">'''
 customer-churn-prediction/
 ├── params.yaml
 ├── README.md
@@ -63,7 +63,7 @@ customer-churn-prediction/
 └── src/
 ├── 01_data_preprocessing.py
 ├── 02_train_model.py
-└── 03_evaluate_model.py
+└── 03_evaluate_model.py'''</pre>
 
 ##  Project Overview
 Customer churn is a critical business problem in the telecom industry. Acquiring new customers is significantly more expensive than retaining existing ones.  
