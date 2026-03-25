@@ -1,170 +1,212 @@
-# Customer Churn Prediction System
+# 📊 Customer Churn Prediction (Telco Dataset)
 
-##  Project Overview
-Customer churn is a critical business problem in the telecom industry. Acquiring new customers is significantly more expensive than retaining existing ones.  
-This project builds an **end-to-end machine learning system** to predict whether a customer is likely to churn based on their service usage, contract details, and billing information.
 
-The project covers the **entire data science lifecycle**:
-- Data preprocessing
-- Exploratory data analysis (EDA)
-- Feature engineering
-- Model training and evaluation
-- Model deployment using Flask
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.25-red)](https://streamlit.io/)
+[![Random Forest](https://img.shields.io/badge/Model-Random%20Forest-orange)](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html)
+
+An end-to-end **Machine Learning project** that predicts customer churn using a **Random Forest Classifier**. This project includes data preprocessing, exploratory data analysis (EDA), model building, evaluation, and deployment using a **Streamlit web app**.
 
 ---
 
-##  Objective
-To predict customer churn (`Yes / No`) and identify key drivers contributing to churn, enabling proactive retention strategies.
+## 🚀 Project Overview
+
+Customer churn prediction helps businesses identify customers who are likely to leave. This project aims to:
+
+* Analyze customer behavior
+* Identify key churn factors
+* Build a predictive ML model
+* Provide a user-friendly interface for predictions
 
 ---
 
-##  Tech Stack
-- **Programming Language:** Python
-- **Data Analysis:** Pandas, NumPy
-- **Visualization:** Matplotlib, Seaborn
-- **Machine Learning:** Scikit-learn
-- **Web Framework:** Flask
-- **Model Serialization:** Joblib
+## 🧠 Model Used
 
-## Project Structure
-<pre markdown="1">
-customer-churn-prediction/
-├── params.yaml
+* **Algorithm:** Random Forest Classifier
+* **Advantages:**
+
+  * Handles non-linear relationships
+  * Reduces overfitting via ensemble learning
+  * Works well with both categorical and numerical data
+  * Provides feature importance
+
+---
+
+## 📁 Project Structure
+
+```
 ├── README.md
 ├── requirements.txt
-├── app/
-│ ├── app.py
-│ └── templates/
-│ └── index.html
-├── config/
-│ └── config.yaml
-├── data/
-│ ├── raw/
-│ │ └── telco_churn.csv
-│ └── processed/
-│ ├── churn_cleaned.csv
-│ └── churn_final_eda.csv
-├── image/
-│ ├── churn_distribution.png
-│ ├── correlation_heatmap.png
-│ ├── feature_correlation_with_churn.png
-│ ├── MonthlyCharges_distribution.png
-│ ├── monthlycharges_vs_churn.png
-│ ├── pairplot.png
-│ ├── tenure_distribution.png
-│ ├── tenure_vs_churn.png
-│ ├── TotalCharges_distribution.png
-│ └── totalcharges_vs_churn.png
-├── model/
-│ ├── churn_model.pkl
-│ └── features.pkl
-├── notebooks/
-│ └── 01_eda.ipynb
-└── src/
-├── 01_data_preprocessing.py
-├── 02_train_model.py
-└── 03_evaluate_model.py</pre>
-
-##  Project Overview
-Customer churn is a critical business problem in the telecom industry. Acquiring new customers is significantly more expensive than retaining existing ones.  
-This project builds an **end-to-end machine learning system** to predict whether a customer is likely to churn based on their service usage, contract details, and billing information.
-
-The project covers the **entire data science lifecycle**:
-- Data preprocessing
-- Exploratory data analysis (EDA)
-- Feature engineering
-- Model training and evaluation
-- Model deployment using Flask
-
----
-
-##  Objective
-To predict customer churn (`Yes / No`) and identify key drivers contributing to churn, enabling proactive retention strategies.
+│
+├── app
+│   └── app.py
+│
+├── data
+│   ├── processed
+│   │   ├── churn_cleaned.csv
+│   │   └── churn_final_eda.csv
+│   │
+│   └── raw
+│       └── telco_churn.csv
+│
+├── image
+│   ├── churn_distribution.png
+│   ├── correlation_heatmap.png
+│   ├── feature_correlation_with_churn.png
+│   ├── MonthlyCharges_distribution.png
+│   ├── monthlycharges_vs_churn.png
+│   ├── pairplot.png
+│   ├── tenure_distribution.png
+│   ├── tenure_vs_churn.png
+│   ├── TotalCharges_distribution.png
+│   ├── totalcharges_vs_churn.png
+│   │
+│   └── screenshots
+│       ├── demo.gif
+│       ├── home.png
+│       ├── prediction_i.png
+│       └── prediction_ii.png
+│
+├── model
+│   ├── churn_model.pkl
+│   └── features.pkl
+│
+├── notebooks
+│   └── 01_eda.ipynb
+│
+└── src
+    ├── 01_data_preprocessing.py
+    ├── 02_train_model.py
+    └── 03_evaluate_model.py
+```
 
 ---
 
-##  Tech Stack
-- **Programming Language:** Python
-- **Data Analysis:** Pandas, NumPy
-- **Visualization:** Matplotlib, Seaborn
-- **Machine Learning:** Scikit-learn
-- **Web Framework:** Flask
-- **Model Serialization:** Joblib
+## 📊 Exploratory Data Analysis (EDA)
 
+Key insights:
 
-## Dataset
-Name: Telco Customer Churn (IBM Sample Dataset)
+* Customers with **low tenure** are more likely to churn
+* Higher **monthly charges** increase churn probability
+* **Contract type** plays a major role in retention
 
-Source: Kaggle
- https://www.kaggle.com/datasets/blastchar/telco-customer-churn
+### 📌 Visualizations
 
- ## Model Training
-**Algorithm**: Random Forest Classifier
+![Churn Distribution](image/churn_distribution.png)
 
-**Class Imbalance Handling**: class_weight="balanced"
+![Correlation Heatmap](image/correlation_heatmap.png)
 
-**Train-Test Split**: Stratified split to preserve churn distribution
+![Tenure vs Churn](image/tenure_vs_churn.png)
 
-**Artifacts Saved**:
+---
 
-    Trained model (churn_model.pkl)
+## 🧪 Machine Learning Pipeline
 
-    Feature names (features.pkl) to ensure consistent inference
+### 1. Data Preprocessing
 
-**Model Performance**
+* Handling missing values
+* Encoding categorical variables
+* Feature selection
 
-    Achieved approximately 80% accuracy
+### 2. Model Training
 
-    Demonstrated strong performance in identifying high-risk churn customers
+* Random Forest Classifier
+* Train-test split
+* Hyperparameter tuning
 
+### 3. Model Evaluation
 
-## Web Application (Flask)
+* Accuracy score
+* Confusion matrix
+* Feature importance
 
-A Flask-based web application was developed to deploy the trained model.
+---
 
-**Features**
+## 💻 Streamlit Web App
 
-    Accepts customer input via a web form
+Interactive web application for real-time churn prediction.
 
-    Performs real-time churn prediction
+### 🎥 Demo
 
-    Displays prediction results instantly
+![Demo](image/screenshots/demo.gif)
 
-## How to Run the Project
-**1. Clone the Repository**
+### 🖼️ Screenshots
 
-    git clone https://github.com/Pranish-Sapkota/customer-churn-prediction
+**Home Page**
+![Home](image/screenshots/home.png)
 
-    cd customer-churn-prediction
+**Prediction Interface**
+![Prediction 1](image/screenshots/prediction_i.png)
 
+![Prediction 2](image/screenshots/prediction_ii.png)
 
-**2. Create a Virtual Environment**
+---
 
-    python -m venv venv
+## ⚙️ Installation & Setup
 
-    source venv/bin/activate 
+### 1. Clone the repository
 
+```
+git clone https://github.com/Pranish-Sapkota/customer-churn-prediction.git
+cd customer-churn-prediction
+```
 
-**3. Install Dependencies**
+### 2. Create virtual environment
 
-    pip install -r requirements.txt
+```
+python -m venv venv
+source venv/bin/activate     # Linux/Mac
+venv\Scripts\activate        # Windows
+```
 
+### 3. Install dependencies
 
-**4. Train the Model**
+```
+pip install -r requirements.txt
+```
 
-    python src/01_data_preprocessing.py
+### 4. Run the application
 
-    python src/02_train_model.py
+```
+streamlit run app/app.py
+```
 
-    python src/03_evaluate_model.py
+---
 
+## 📦 Requirements
 
+* streamlit
+* pandas
+* numpy
+* scikit-learn
+* matplotlib
+* seaborn
+* plotly
 
-**5. Run the Flask App**
+---
 
-    python app/app.py
+## 📌 Future Improvements
 
+* Deploy on cloud (Streamlit Cloud / AWS / Render)
+* Add SHAP for model explainability
+* Improve UI/UX
+* Experiment with XGBoost / LightGBM
 
+---
 
+## 🤝 Contributing
 
+Contributions are welcome. Feel free to fork this repository and submit a pull request.
 
+---
+
+## 📧 Contact
+
+**Pranish Sapkota**
+GitHub: https://github.com/Pranish-Sapkota
+
+---
+
+## ⭐ Support
+
+If you found this project useful, please give it a ⭐ on GitHub!
